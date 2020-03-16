@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Red Velvet</title>
+
+    <style>
+			body {
+				font-size: 200%;
+			}
+		</style>
+  </head>
+
+  <body>
+    <h1>Other members</h1>
+
+    <ul>
+      {% for other in others %}
+        <li>{{other}}</li>
+      {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('index') }}">Go back...</a>
+  </body>
+</html>

@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>My Website</title>
+		<title>Red Velvet</title>
+
+		<style>
+			body {
+				font-size: 200%;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -12,5 +18,7 @@
 				<li>{{name}}</li>
 			{% endfor %}
 		</ul>
+
+		<a href="{{ url_for('more') }}">See more...</a>
 	</body>
 </html>
