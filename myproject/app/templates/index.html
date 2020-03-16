@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Red Velvet</title>
+{% extends "layout.html" %}
 
-		<style>
-			body {
-				font-size: 200%;
-			}
-		</style>
-	</head>
+{% block heading %}
+	Members
+{% endblock %}
 
-	<body>
-		<h1>Red Velvet</h1>
+{% block body %}
+	<ul>
+		{% for name in names %}
+			<li>{{name}}</li>
+		{% endfor %}
+	</ul>
 
-		<ul>
-			{% for name in names %}
-				<li>{{name}}</li>
-			{% endfor %}
-		</ul>
-
-		<a href="{{ url_for('more') }}">See more...</a>
-	</body>
-</html>
+	<a href="{{ url_for('more') }}">See more...</a>
+{% endblock %}
