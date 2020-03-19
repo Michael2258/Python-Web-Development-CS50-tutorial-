@@ -11,11 +11,12 @@ notes = []
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+  session["notes"] = []
   if request.method == "POST":
     note = request.form.get("note")
-    notes.append(note)
+    session["notes"].append(note)
 
-  return render_template("index.html", notes=notes)
+  return render_template("index.html", notes=session["notes"])
 
 if __name__ == "__main__":
     app.run() 
