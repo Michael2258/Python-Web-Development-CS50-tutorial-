@@ -1,16 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-  names = ["Irene", "Seulgi", "Wendy", "Joy", "Yeri"]
-  return render_template("index.html", names=names)
+  return render_template("index.html")
 
-@app.route("/more")
-def more():
-  others = ["Suho", "Taeyeon", "Sakura"]
-  return render_template("more.html", others=others)
+@app.route("/hello", methods=["POST"]) # chỉ có thể truy cập vào route bằng code, thay vì gõ trên link như GET #
+def hello():
+  name = request.form.get("name")
+  return render_template("hello.html", name=name)
 
 if __name__ == "__main__":
     app.run()
